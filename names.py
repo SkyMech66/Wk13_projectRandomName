@@ -3,7 +3,7 @@ import random
 import sys
 
 # variables
-# depatment - department names
+# department - department names
 # number - how many EC2_names needed
 
 def string_generator(size=10, string=string.ascii_letters + string.digits):
