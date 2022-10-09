@@ -1,15 +1,16 @@
-import string
 import random
+import string
 import sys
 
 # variables
-# department - department names
-# number - how many EC2_names needed
+# depatment - department names
+# number    - how many EC2_name instances requested
+
 
 def string_generator(size=10, string=string.ascii_letters + string.digits):
     return ''.join(random.choice(string) for _ in range(size))
 
-department = input("Enter Department: Sales, Logistics, Management, Qaulity, Research, Marketing, Accounting, Finances:")  
+department = input("Enter Department: Sales, Logistics, Management, Qaulity, Research, Marketing, Accounting, Finances: ")  
     
 for _ in department:
     
@@ -26,17 +27,14 @@ for _ in department:
         break
     
     elif department == ("Quality") or department.lower() == ("qaulity") :
-        print("Ready")
         #print ("Quality")
         break
     
     elif department == ("Research") or department.lower() == ("research") :
-        print("Ready")
         #print("Research")
         break
     
     elif department == ("Marketing") or department.lower() == ("marketing") :
-        print("Ready")
         #print("Marketing")
         break
     
@@ -51,20 +49,18 @@ for _ in department:
     else:
         print("Department not available.")
     
-number = int(input("How many do you need?:"))
+number = int(input("How many do you need?: "))
 
-if number > (0):
-    print ("Standby.")
-        
-if number <= (0):
-    print("Must enter a number greater than zero for request.")
-    while number <= (0):
-        next_step = int(input("How many do you need?:"))
-            #print ("Screams internally with a smile")
-        break
-            
-for _ in range(1, number + 1):
-    name = (department)
-    EC2_name = (name + string_generator)
+if number > 0:
+    print("Standby.")
     
-print("Instances named:", EC2_name)
+elif number <= 0:
+    #print ("Screams internally with a smile")
+    print("Must enter number greater than zero for request ")
+ 
+print("Names generated")
+
+for _ in range(1, number + 1):
+    unique_name = department
+    EC2_name = unique_name + (":") + string_generator()
+    print("Instance named: ", EC2_name)
